@@ -10,23 +10,33 @@ package trianglesexercise;
  * @author philliphbrink
  */
 public class Triangels {
-
-    public Triangels() {
+    
+    public String searchTriangle(int sideA, int sideB, int sideC){
+        if (isEquilateral(sideA, sideB, sideC)){
+            return "Equilateral Triangle";
+        } else if(isIsosceles(sideA, sideB, sideC)){
+            return "Isosceles Triangle";
+        } else if (isScalene(sideA, sideB, sideC)) {
+            return "Scalene Triangle";
+        } else {
+            return "Not a triangle";
+        }
     }
     
-    public String controlTiangle(int sideA, int sideB, int sideC){
-        if(sideA > 0&& sideB > 0 && sideC >0){
-            String result;
-            if (sideA == sideB && sideB == sideC){
-                result = "Equilateral Triangle";
-            } else if ( sideA == sideB||sideB == sideC||sideA == sideC){
-                result = "Isosceles Triangle";
-            } else {
-                result = "Scalene Triangle";
-            }
-            return result;
-        }
-        return "Not a triangle";
+    public boolean isTriangle(int sideA, int sideB, int sideC){
+        return ((sideA + sideB) > sideC && (sideA + sideC) > sideB && (sideB + sideC) > sideA);
+    }
+    
+    public boolean isScalene(int sideA, int sideB, int sideC){
+        return isTriangle(sideA, sideB, sideC);
+    }
+    
+    public boolean isEquilateral(int sideA, int sideB, int sideC){
+        return isTriangle(sideA, sideB, sideC) ? sideA == sideB && sideB == sideC : false;
+    }
+    
+    public boolean isIsosceles(int sideA, int sideB, int sideC){
+        return isTriangle(sideA, sideB, sideC) ? sideA == sideB||sideB == sideC||sideA == sideC : false;
     }
     
 }

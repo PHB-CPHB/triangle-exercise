@@ -18,93 +18,68 @@ public class TriangelsTest {
     }
 
     /**
-     * Test of controlTiangle method, of class Triangels.
+     * Test of searchTriangle method, of class Triangels.
      */
     @Test
-    public void testEquilateralTiangle() {
-        System.out.println("\"Equilateral Triangle Input 2, 2, 2\"");
-        int sideA = 2;
-        int sideB = 2;
-        int sideC = 2;
-        Triangels instance = new Triangels();
-        String expResult = "Equilateral Triangle";
-        String result = instance.controlTiangle(sideA, sideB, sideC);
-        assertEquals(expResult, result);
-    }
-    
-    /**
-     * Test of controlTiangle method, of class Triangels.
-     */
-    @Test
-    public void testIsoscelesTiangle() {
-        System.out.println("\"Isosceles Triangle Input 2, 2, 3\"");
-        int sideA = 2;
-        int sideB = 2;
-        int sideC = 3;
-        Triangels instance = new Triangels();
-        String expResult = "Isosceles Triangle";
-        String result = instance.controlTiangle(sideA, sideB, sideC);
-        assertEquals(expResult, result);
-    }
-    
-    /**
-     * Test of controlTiangle method, of class Triangels.
-     */
-    @Test
-    public void testScaleneTiangle() {
-        System.out.println("\"Scalene Triangle Input 2, 3, 4\"");
-        int sideA = 2;
-        int sideB = 3;
-        int sideC = 4;
-        Triangels instance = new Triangels();
-        String expResult = "Scalene Triangle";
-        String result = instance.controlTiangle(sideA, sideB, sideC);
-        assertEquals(expResult, result);
-    }
-    
-    /**
-     * Test of controlTiangle method, of class Triangels.
-     */
-    @Test
-    public void testNotATiangle() {
-        System.out.println("\"Not a triangle Input 0, 2, 3\"");
+    public void testIsTriange() {
+        System.out.println("Not a Triangle");
         int sideA = 0;
+        int sideB = 1;
+        int sideC = 0;
+        Triangels instance = new Triangels();
+        assertFalse(instance.isTriangle(sideA, sideB, sideC));
+    }
+    
+    /**
+     * Test of searchTriangle method, of class Triangels.
+     */
+    @Test
+    public void testIsEquilateral() {
+        System.out.println("Equilateral");
+        int sideA = 3;
+        int sideB = 3;
+        int sideC = 3;
+        Triangels instance = new Triangels();
+        assertTrue(instance.isEquilateral(sideA, sideB, sideC));
+    }
+    
+    /**
+     * Test of searchTriangle method, of class Triangels.
+     */
+    @Test
+    public void testIsIsosceles() {
+        System.out.println("Isosceles");
+        int sideA = 2;
         int sideB = 2;
         int sideC = 3;
         Triangels instance = new Triangels();
-        String expResult = "Not a triangle";
-        String result = instance.controlTiangle(sideA, sideB, sideC);
-        assertEquals(expResult, result);
+        assertTrue(instance.isIsosceles(sideA, sideB, sideC));
     }
     
     /**
-     * Test of controlTiangle method, of class Triangels.
+     * Test of searchTriangle method, of class Triangels.
      */
     @Test
-    public void testNotATiangleTwo() {
-        System.out.println("\"Not a triangle Input 2, -1, 4\"");
-        int sideA = 2;
-        int sideB = -1;
-        int sideC = 4;
+    public void testIsScaled() {
+        System.out.println("Scaled");
+        int sideA = 3;
+        int sideB = 5;
+        int sideC = 6;
         Triangels instance = new Triangels();
-        String expResult = "Not a triangle";
-        String result = instance.controlTiangle(sideA, sideB, sideC);
-        assertEquals(expResult, result);
+        assertTrue(instance.isScalene(sideA, sideB, sideC));
     }
     
     /**
-     * Test of controlTiangle method, of class Triangels.
+     * Test of searchTriangle method, of class Triangels.
      */
     @Test
-    public void testEquilateralTiangleTwo() {
-        System.out.println("\"Equilateral Triangle Input 50,50,50\"");
-        int sideA = 50;
-        int sideB = 50;
-        int sideC = 50;
+    public void testClass() {
+        System.out.println("Scaled");
+        int sideA = 3;
+        int sideB = 5;
+        int sideC = 6;
         Triangels instance = new Triangels();
-        String expResult = "Equilateral Triangle";
-        String result = instance.controlTiangle(sideA, sideB, sideC);
-        assertEquals(expResult, result);
+        assertEquals(instance.searchTriangle(sideA, sideB, sideC), "Scalene Triangle");
     }
     
 }

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="da"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Triangels.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;TrianglesExercise&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">trianglesexercise</a> &gt; <span class="el_source">Triangels.java</span></div><h1>Triangels.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package trianglesexercise;
+
+/**
+ *
+ * @author philliphbrink
+ */
+<span class="fc" id="L12">public class Triangels {</span>
+    
+    public String searchTriangle(int sideA, int sideB, int sideC){
+<span class="pc bpc" id="L15" title="1 of 2 branches missed.">        if (isEquilateral(sideA, sideB, sideC)){</span>
+<span class="nc" id="L16">            return &quot;Equilateral Triangle&quot;;</span>
+<span class="pc bpc" id="L17" title="1 of 2 branches missed.">        } else if(isIsosceles(sideA, sideB, sideC)){</span>
+<span class="nc" id="L18">            return &quot;Isosceles Triangle&quot;;</span>
+<span class="pc bpc" id="L19" title="1 of 2 branches missed.">        } else if (isScalene(sideA, sideB, sideC)) {</span>
+<span class="fc" id="L20">            return &quot;Scalene Triangle&quot;;</span>
+        } else {
+<span class="nc" id="L22">            return &quot;Not a triangle&quot;;</span>
+        }
+    }
+    
+    public boolean isTriangle(int sideA, int sideB, int sideC){
+<span class="pc bpc" id="L27" title="2 of 6 branches missed.">        return ((sideA + sideB) &gt; sideC &amp;&amp; (sideA + sideC) &gt; sideB &amp;&amp; (sideB + sideC) &gt; sideA);</span>
+    }
+    
+    public boolean isScalene(int sideA, int sideB, int sideC){
+<span class="fc" id="L31">        return isTriangle(sideA, sideB, sideC);</span>
+    }
+    
+    public boolean isEquilateral(int sideA, int sideB, int sideC){
+<span class="pc bpc" id="L35" title="2 of 6 branches missed.">        return isTriangle(sideA, sideB, sideC) ? sideA == sideB &amp;&amp; sideB == sideC : false;</span>
+    }
+    
+    public boolean isIsosceles(int sideA, int sideB, int sideC){
+<span class="pc bpc" id="L39" title="3 of 8 branches missed.">        return isTriangle(sideA, sideB, sideC) ? sideA == sideB||sideB == sideC||sideA == sideC : false;</span>
+    }
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>
