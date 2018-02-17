@@ -20,16 +20,23 @@ I have used Netbeans
 1. Clone the project
 2. Open IDE
 3. Import project in IDE
-4. Go to TrianglesExercise.java
+4. Go to main.java
+5. Outcomment Commandline Usage and incommet Netbeans Usage
+
+### Run test cases
+I have used Netbeans
+1. Clone the project
+2. Open IDE
+3. Import project in IDE
+4. Go to TriangelsTest.java
 5. Outcomment Commandline Usage and incommet Netbeans Usage
 
 ### Test cases
 
-| Input      | Expected output      | actual output        |
-|------------|----------------------|----------------------|
-| (2,2,2)    | Equilateral Triangle | Equilateral Triangle |
-| (2,2,3)    | Isosceles Triangle   | Isosceles Triangle   |
-| (2,3,4)    | Scalene Triangle     | Scalene Triangle     |
-| (0,2,3)    | Not a triangle       | Not a triangle       |
-| (2,-1,4)   | Not a triangle       | Not a triangle       |
-| (50,50,50) | Equilateral Triangle | Equilateral Triangle |
+| Test              | Input      | Expected output     | actual output      |
+|-------------------|------------|---------------------|--------------------|
+| testIsTriange     | (0,1,0)    | false               | false              |
+| testIsEquilateral | (3,3,3)    | true                | true               |
+| testIsIsosceles   | (2,2,3)    | true                | true               |
+| testIsScaled      | (3,5,6)    | true                | true               |
+| testClass         | (3,5,6)    | Scalene Triangle    | Scalene Triangle   |
